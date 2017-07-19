@@ -1,3 +1,12 @@
+@mixin color-icon($primary-color, $secondary-color) {
+    color: $primary-color;
+    fill: $primary-color;
+
+    &:not([disabled]):hover, &:active, &:focus {
+        color: $secondary-color;
+        fill: $secondary-color;
+    }
+}
 
 .svg-icon-wrapper {
     display: inline-flex;
@@ -28,6 +37,25 @@
         }
     }
 
+    &.__warning {
+        @include color-icon($yellow, $gold);
+    }
+
+    &.__primary {
+        @include color-icon($blue, $dark-blue);
+    }
+
+    &.__secondary {
+        @include color-icon($gray, $dark-gray);
+    }
+
+    &.__positive {
+        @include color-icon($green, $lima);
+    }
+
+    &.__negative {
+        @include color-icon($red, $torch-red);
+    }
     .svg-icon {
         &.svg-icon--small {
             width: 10px;
@@ -40,6 +68,11 @@
         &.svg-icon--large {
             width: 20px;
             height: 20px;
+        }
+
+        &.svg-icon--default {
+            width: 100%;
+            height: 100%;
         }
     }
 }
