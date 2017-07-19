@@ -3,8 +3,10 @@
     fill: $primary-color;
 
     &:not([disabled]):hover, &:active, &:focus {
-        color: $secondary-color;
-        fill: $secondary-color;
+        &.clickable {
+            color: $secondary-color;
+            fill: $secondary-color;
+        }
     }
 }
 
