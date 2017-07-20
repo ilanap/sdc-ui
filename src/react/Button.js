@@ -7,7 +7,7 @@ const Button = (props) => {
 		<button onClick={onClick}
 		        className={`sdc-button sdc-button-${btnType} sdc-button__${color} ${className || ''} ${iconName ? 'sdc-button__with-icon' : ''}`}
 		        disabled={disabled} {...other}>
-			{iconName && <SVGIcon className='sdc-button-icon' name={iconName} size={iconSize}/>}
+			{iconName && <SVGIcon className='sdc-button-icon' name={iconName} size={iconSize} disabled={disabled}/>}
 			<div className='sdc-button-label'>{children}</div>
 		</button>
 	);
